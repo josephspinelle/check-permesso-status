@@ -7,8 +7,9 @@ from datetime import datetime
 from check_permesso_accounts import accounts  # Your login info
 
 # --- EMAIL SETTINGS ---
-email_sender = "joespinelle@gmail.com"
 import os
+
+email_sender = "joespinelle@gmail.com"
 email_password = os.environ.get("EMAIL_PASSWORD")
 always_send = ["joespinelle@gmail.com"]
 dad_email = "briggsjs@earthlink.net"
