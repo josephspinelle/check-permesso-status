@@ -8,8 +8,9 @@ from check_permesso_accounts import accounts  # Your login info
 
 # --- EMAIL SETTINGS ---
 email_sender = "joespinelle@gmail.com"
-email_password = "utgl nhzi emst tkpu"  # App password
-email_recipient = "joespinelle@gmail.com"
+import os
+email_password = os.environ.get("EMAIL_PASSWORD")
+email_recipients = ["joespinelle@gmail.com", "shadowcat1017@yahoo.com"]
 smtp_server = "smtp.gmail.com"
 smtp_port = 465
 
@@ -113,7 +114,7 @@ email_subject = "; ".join(subject_parts)
 msg = MIMEText(email_body)
 msg["Subject"] = email_subject
 msg["From"] = email_sender
-msg["To"] = email_recipient
+msg["To"] = ", ".join(email_recipients)
 
 with smtplib.SMTP_SSL(smtp_server, smtp_port) as server:
     server.login(email_sender, email_password)
