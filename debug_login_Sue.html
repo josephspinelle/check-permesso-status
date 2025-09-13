@@ -1,0 +1,117 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<HTML>
+	<HEAD>
+        
+		<title>PORTALE IMMIGRAZIONE - Automazione Permessi/Carte di Soggiorno</title>
+		
+		<meta name="CODE_LANGUAGE" Content="vb">
+		<meta name="vs_defaultClientScript" content="JavaScript">
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<LINK href="../styles.css" type="text/css" rel="stylesheet">			
+
+		<script type="text/javascript">
+			var myclose=false;
+			
+			function ConfirmClose() {				
+				//if (event.clientY <= 0 && event.clientX <= 0) {
+				if (event.clientY <= 0) {				
+				
+				//if (window && !window.closed){
+				//	event.returnValue = '';
+				//}
+				
+				setTimeout('myclose=false;',100);
+				myclose=true;
+				}
+			}
+			
+			function HandleOnClose() {
+				if (myclose==true) {
+				window.showModalDialog("../Vari/LogOutSession.aspx", "", "dialogHeight: 1px; dialogWidth: 1px; dialogTop: 1px; dialogLeft: 1px; edge: Raised; center: No; resizable: yes; status: No;");				
+				}
+			}
+		</script>
+		
+	</HEAD>
+	<body onbeforeunload="ConfirmClose()" onunload="HandleOnClose()" MS_POSITIONING="GridLayout" style="margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;overflow:hidden">
+		<form name="FormHomePage" method="post" action="./HomePage.aspx" id="FormHomePage">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="A2DTasuaf9NC2LgOyTCqKqjmpLozEpfqVSt3EV8PqTPnjLYCAa4MyreMa4eLPL4Z2NQsKROT/VyvdOnCyqxcqyxp2AFv4Z4g63GEedWXlJMAwUc/wC3jdphRF78TwV0cQIRaiqV6mbE/QdSGqf2tMqF5ZcVljqnFKvEoqABHEaKDZY+zvYkRqR05pYeeKmEwBxfzkmXlQMVnvxK//UlXjz0IHpTeFJCXaWAlwE3hkxfm+vVFY9XJMfMhDuZssHN7fTgzvtQJhIPDHNqG59h4MZWLghAx6Yx1GpqXCvL9tTGbqPlrQDbypbFEzstiXF5I+Gs/lCK+VVjQA3FOAPbttZT09IdQt6h7ufhhd2B+3d2FlUMwi4i4F6WPsI9IlkDtqAkVEs+f6cnspla2zb2U/HvxoZ8xs+DYlEFGnbaAbrcz/NiUaB2r6oGrW0eQbU/g7bq3bvqjxJC8806300MPWay76fG6f/ii4bb+y7SD0kpWI/Q8pxyzukig9qC4Ei876H7FuPFRkDm2swvHCYbM/T2UOtKLuLukBOJbuFrf+7LegcJj9WUWMglJjEQOBQwXcWTmt5jzLjmxblXkAN0funaI3aTVS9pB0E2m+0dJ2FVrtPt8x/aJP5UWFjo5gSDm2CBYMCd3pa4MmRxvPPUpU1ptGXAgMBAKSQyjtdAJo4xomUi5Pwdk1Pp12AmPKZGbPM3Tp/sKVDrx32bZ/zBmjeggtTib7OJKmSRxYsc0bb9+maFmRoTz8lI4iLYrTxW/OvNF7lLbfwXFiDFsp2OGBWkGGJzKY2FoXIrEnJDeOSV9QlLIV9Gsj9kY7lxDOCW1GHYO7/GZFPIbSg78D3qEJR/9NSN10Jo/n/N1YD/qwByyFoQnmYtqu3ELYDhZ+R0HT1SbrK4JRexir6nBxkuOYH34jDn1t8EvMgG9iRyaQUn5YkqF0syX922V8zCMvng3n+iJrpDqjdKavNN9wYimQR9X5N7evRP9ZrO7rt3jSwjGkkTPpE358gqJca0M/iTrUMu9m+h8SCjAxG+rb6zSARyslljtOhlwMUtDS9jui6ml+k2EwxVeUgH+Q4QpAXbQKKdTT1TuVmqG8F8ZzxoiOYzqC4Mqa7P/WA6z5XZhc/qfo73haghIehL3UdOlJo1H4mjDmV84qeBeRiQowz457I+t+rLvLafu6PsYxNjLtCxDRBq73TcJ+OEaLR3PNhG1AvGHeUHBf/VceLbk32uPCg==" />
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="58229914" />
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="PS/hDJx9NN0WU+WC3vYnBh7USTlqcHjZR2oYa6mTulJnyNUGeyQv9fLW0NPeGTzX8S1yeamJeCcznlqWFKYUOkF23Pps4rg6erWvwhWZfCE9aQdHjdQ+3IBVuj5j6vn8JMZVXxljSRII/8kWW2/hR1HroyZ3aYEY28puiybrcGU=" />
+			<table style="width:100%;height:100%;Z-INDEX: 101">
+				<tr>
+					<td colspan="2" valign="top">
+<table style="width:100%;height:60px">
+	<tr>
+		<td style="height:50px">
+			<img id="UC_Testata1_Image1" src="../images/LogoPI2D.gif" alt="PosteItaliane" border="0" style="Z-INDEX: 102; LEFT: 6px; POSITION: absolute; TOP: 0px" />
+			<DIV class="BarraSupGradiente" id="DIV1" style="Z-INDEX: 101;top:12px">
+				<span id="UC_Testata1_lblGENERAL_TITLE">PORTALE IMMIGRAZIONE - Automazione Permessi/Carte di Soggiorno</span>
+			</DIV>
+			<DIV class="BarraSupBandiere" id="Div2" style="Z-INDEX: 101">
+				<input type="image" name="UC_Testata1:btnItalian" id="UC_Testata1_btnItalian" accesskey="I" tabindex="10" title="Italiano" src="../images/Italian.gif" align="absmiddle" border="0" />
+				<a id="UC_Testata1_lnkItalian" tabindex="10" title="Clicca per cambiare la lingua in Italiano" class="Multilanguage" onmouseover="this.style.backgroundColor=&#39;#e8f404&#39;;" onmouseout="this.style.backgroundColor=&#39;#ffffdf&#39;;" href="javascript:__doPostBack(&#39;UC_Testata1$lnkItalian&#39;,&#39;&#39;)">Italiano [I]</a>
+				<input type="image" name="UC_Testata1:btnEnglish" id="UC_Testata1_btnEnglish" accesskey="E" disabled="disabled" tabindex="20" title="Inglese" src="../images/ENGLISH.gif" align="absmiddle" border="0" />
+				<a id="UC_Testata1_lnkEnglish" disabled="disabled" tabindex="20" title="Clicca per cambiare la lingua in Inglese" class="Multilanguage" onmouseover="this.style.backgroundColor=&#39;#e8f404&#39;;" onmouseout="this.style.backgroundColor=&#39;#ffffdf&#39;;">Inglese [E]</a>
+			</DIV>
+			<DIV class="BarraSupBandiere" id="Div3" style="Z-INDEX: 101; LEFT: 15px; TEXT-ALIGN: left">
+				<span id="UC_Testata1_DataOra" class="Multilanguage">sabato 13 settembre 2025</span>
+			</DIV>
+		</td>
+	</tr>
+</table>
+<br>
+</td>
+				</tr>
+				<tr height="100%">
+					<td class="CellaCol2" valign="top" align="center">Menu'<br>
+						<hr>
+						
+<script type="text/javascript" src="../Menu/Menu.js"></script>
+
+<script type="text/javascript">
+//******************************************************************************************************************
+//ESEMPIO PARAMETRI
+//function beginSTM(nam,type,pos_l,pos_t,flt,click_sh,click_hd,ver,hddelay,shdelay_h,shdelay_v,web_path,blank_src)
+//******************************************************************************************************************
+
+//*****************		INIZIO PARTE COMUNE		**********************
+beginSTM("ivvnair","static","0","0","left","false","true","310","500","0","0","","/Menu/blank.gif");
+	beginSTMB("","0","0","vertically","","0","0","1","3","transparent","","free","#fffbde","1","none","0","Normal","50","0","0","7","7","0","0","1","#000099","false","#fffbde","#fffbde","#fffbde","none");
+//appendSTMI("false","Pagina Principale","P","left","middle","","","12","12","0","normal","#000099","#e8f404","","1","-1","-1","/Menu/blank.gif","/Menu/blank.gif","-1","-1","0","Pagina Principale","../Pagine/Benvenuto.aspx","frmPannelli","Arial","0.7em","#ffffff","bold","normal","none","Arial","0.7em","#000099","bold","normal","none","1","solid","#000000","#000000","#000000","#000000","#000000","#000000","#000000","#000000","","","","","tiled","true","true");
+
+//*****************		FINE PARTE COMUNE		**********************
+appendSTMI("false","Istanza","1","left","middle","","","12","12","0","normal","#000099","#e8f404","","1","-1","-1","/Menu/blank.gif","/Menu/blank.gif","-1","-1","0","Interrogazione/visualizzazione Istanza","../Pagine/VisualizzaIstanza.aspx","frmPannelli","Arial","0.7em","#ffffff","bold","normal","none","Arial","0.7em","#000099","bold","normal","none","1","solid","#000000","#000000","#000000","#000000","#000000","#000000","#000000","#000000","","","","","tiled","true","true");
+
+//*****************		INIZIO PARTE COMUNE		*************************
+appendSTMI("false","Glossario","G","left","middle","","","12","12","0","normal","#000099","#e8f404","","1","-1","-1","/Menu/blank.gif","/Menu/blank.gif","-1","-1","0","Glossario","../Pagine/Glossario.aspx","frmPannelli","Arial","0.7em","#ffffff","bold","normal","none","Arial","0.7em","#000099","bold","normal","none","1","solid","#000000","#000000","#000000","#000000","#000000","#000000","#000000","#000000","","","","","tiled","true","true");
+appendSTMI("false","Aiuto","H","left","middle","","","12","12","0","normal","#000099","#e8f404","","1","-1","-1","/Menu/blank.gif","/Menu/blank.gif","-1","-1","0","Aiuto","../help/help.aspx","_help","Arial","0.7em","#ffffff","bold","normal","none","Arial","0.7em","#000099","bold","normal","none","1","solid","#000000","#000000","#000000","#000000","#000000","#000000","#000000","#000000","","","","","tiled","true","true");
+appendSTMI("false","Cookie Policy","","left","middle","","","12","12","0","normal","#000099","#e8f404","","1","-1","-1","/Menu/blank.gif","/Menu/blank.gif","-1","-1","0","Cookie Policy","../Pagine/InfoCookie.aspx","frmPannelli","Arial","0.7em","#ffffff","bold","normal","none","Arial","0.7em","#000099","bold","normal","none","1","solid","#000000","#000000","#000000","#000000","#000000","#000000","#000000","#000000","","","","","tiled","true","true");
+  appendSTMI("false","Uscita","Q","left","middle","","","12","12","0","normal","#000099","#e8f404","","1","-1","-1","/Menu/blank.gif","/Menu/blank.gif","-1","-1","0","Uscita","../Vari/LogOut.aspx","_top","Arial","0.7em","#ffffff","bold","normal","none","Arial","0.7em","#000099","bold","normal","none","1","solid","#000000","#000000","#000000","#000000","#000000","#000000","#000000","#000000","","","","","tiled","true","true");
+endSTMB();
+endSTM();
+//*****************		FINE PARTE COMUNE		**************************
+</script>
+
+					</td>
+					<td width="85%">
+						<iframe src="../Pagine/VisualizzaIstanza.aspx" id="frmPannelli" name="frmPannelli" width="100%" height="100%" frameborder="no" scrolling="auto" tabIndex="0"></iframe>
+					</td>
+				</tr>
+				<tr height="35px">
+					<td colspan="2" valign="baseline">
+						
+<TABLE class="BoxProfilo" style="LEFT: 9px" cellSpacing="0" cellPadding="3">
+	<TR>
+		
+	</TR>
+</TABLE>
+<DIV class="BarraInfGradiente"><span id="UC_DatiUtente1_lblVersion">Versione 4.2.0.0</span></DIV>
+</td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</HTML>
