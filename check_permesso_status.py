@@ -10,9 +10,10 @@ from check_permesso_accounts import accounts  # Your login info
 email_sender = "joespinelle@gmail.com"
 import os
 email_password = os.environ.get("EMAIL_PASSWORD")
-email_recipients = ["joespinelle@gmail.com", "shadowcat1017@yahoo.com"]
-smtp_server = "smtp.gmail.com"
-smtp_port = 465
+always_send = ["joespinelle@gmail.com"]
+dad_email = "briggsjs@earthlink.net"
+sue_email = "susib50@yahoo.com"
+alisa_email = "shadowcat1017@yahoo.com"
 
 # --- LOG START ---
 import os
@@ -26,8 +27,9 @@ with open(log_path, "a", encoding="utf-8") as log:
 login_url = "https://www.portaleimmigrazione.it/ELI2ImmigrazioneWEB/Pagine/StartPage.aspx"
 iframe_url = "https://www.portaleimmigrazione.it/ELI2ImmigrazioneWEB/Pagine/VisualizzaIstanza.aspx"
 
-# --- INIT RESULTS ---
+# --- INIT ---
 results = []
+status_changed = False  # Track if either Dad or Sue had a change
 
 # --- MAIN LOOP ---
 for account in accounts:
@@ -70,25 +72,31 @@ for account in accounts:
         status_span = iframe_soup.find("span", id="txtTRACCIATURA_STATOATTUALE")
         status = status_span.text.strip() if status_span else "⚠️ Stato non trovato"
 
-        # Step 8: Compare with previous status
+        # Step 8: Load previous status and compare
         status_file = f"status_{account['name'].lower()}.txt"
-        try:
+        previous_status = ""
+        has_changed = False
+
+        if os.path.exists(status_file):
             with open(status_file, "r", encoding="utf-8") as f:
                 previous_status = f.read().strip()
-        except FileNotFoundError:
-            previous_status = "(first check)"
+            has_changed = (status != previous_status)
 
-        has_changed = (status != previous_status)
-        if has_changed:
-            print(f"🆕 Status change detected for {account['name']}!")
+        else:
+            previous_status = "(first check)"
+            has_changed = True
 
         # Save current status
         with open(status_file, "w", encoding="utf-8") as f:
             f.write(status)
 
-        # Save status for subject line
+        # Flag if Dad or Sue changed
+        if has_changed and account['name'].lower() in ["dad", "sue"]:
+            status_changed = True
+
+        # Add to subject line
         status_display = f"{status} 🆕" if has_changed else status
-        account["status_subject"] = status_display
+        account['status_subject'] = status_display
 
         # Step 9: Extract "Convocazione"
         convocazione_li = iframe_soup.select_one("li[id]")
@@ -114,7 +122,15 @@ email_subject = "; ".join(subject_parts)
 msg = MIMEText(email_body)
 msg["Subject"] = email_subject
 msg["From"] = email_sender
-msg["To"] = ", ".join(email_recipients)
+
+# Determine recipients
+conditional_recipients = []
+if status_changed:
+    conditional_recipients = [dad_email, sue_email, alisa_email]
+
+# Combine all unique recipients
+all_recipients = list(set(always_send + conditional_recipients))
+msg["To"] = ", ".join(all_recipients)
 
 with smtplib.SMTP_SSL(smtp_server, smtp_port) as server:
     server.login(email_sender, email_password)
