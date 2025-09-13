@@ -15,6 +15,9 @@ dad_email = "briggsjs@earthlink.net"
 sue_email = "susib50@yahoo.com"
 alisa_email = "shadowcat1017@yahoo.com"
 
+smtp_server = "smtp.gmail.com"
+smtp_port = 465
+
 # --- LOG START ---
 import os
 script_dir = os.path.dirname(__file__)
